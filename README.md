@@ -108,8 +108,8 @@ Consulte [docs/TESTES.md](docs/TESTES.md). O treinamento e a inferência C++ for
 
 ## Vídeo e links de entrega
 
-- - Simulação Wokwi: https://wokwi.com/projects/480714323783938049
-- Vídeo demonstrativo, até 6 minutos: **PENDENTE — inserir link acessível após gravar.**
+- Simulação Wokwi: https://wokwi.com/projects/480714323783938049
+- Vídeo demonstrativo: https://youtu.be/AGFnLPsFqj0
 - Portal: https://reencontro-site.vercel.app/
 
 Entregar o link do GitHub com todos estes arquivos, integrantes no README e link do vídeo. Não entregar somente o ZIP ou o portal. Não apresentar este pacote como entrega final antes de preencher os links e realizar os testes de simulação.
