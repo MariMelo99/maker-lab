@@ -27,18 +27,26 @@ O grupo não possuía robô anterior. As versões V1 e V2 foram concebidas nesta
 
 A V1 pode confundir um objeto próximo com um usuário. A V2 exige movimento recente para acolher, sinaliza movimento distante e proximidade excessiva, e trata falhas antes de executar a IA. O PIR detecta movimento, não identidade nem presença contínua. Uma pessoa imóvel por muito tempo pode deixar de ser atendida; essa é uma limitação conhecida.
 
-## Executar on-line no Wokwi
 
-1. Acesse https://wokwi.com/ e crie um projeto **ESP32 / Arduino**.
-2. Substitua todo o conteúdo de `sketch.ino` e `diagram.json` pelos arquivos desta pasta.
-3. Crie a aba `modelo.h` e copie seu conteúdo. Ela é necessária para compilar.
-4. Adicione **LiquidCrystal I2C** no Library Manager (equivalente ao `libraries.txt` fornecido).
-5. Inicie a simulação no botão ▶. O LCD deverá apresentar o estado de espera.
-6. Clique no HC-SR04 e altere a distância com o controle do simulador.
-7. Clique no PIR e em **Simulate Motion**. A saída fica alta por cinco segundos; o firmware conserva a indicação de movimento por dez segundos após a última leitura alta.
-8. No estado de acolhimento, envie `1`, `2` ou `3` no monitor serial e pressione Enter.
-9. Pressione e mantenha o botão vermelho para injetar uma falha; solte para recuperar.
-10. Salve o projeto na sua conta e copie a URL para a seção de links abaixo.
+## Executar a simulação no Wokwi
+
+1. Abra a [simulação do Reencontro](https://wokwi.com/projects/480714323783938049).
+2. Clique no botão ▶ para iniciar.
+3. Clique no sensor ultrassônico HC-SR04 e ajuste a distância:
+   - **250 cm:** movimento distante ou espera.
+   - **100 cm:** distância para acolhimento.
+   - **20 cm:** alerta de proximidade excessiva.
+4. Para simular movimento, clique no sensor PIR e em **Simulate Motion**. Com a distância em 100 cm, o robô inicia o acolhimento.
+5. Durante o acolhimento, envie `1`, `2` ou `3` no monitor serial para acessar as orientações.
+6. Mantenha o botão vermelho **INJETAR FALHA** pressionado para testar a falha. Solte para verificar a recuperação.
+7. Para observar o retorno à espera, ajuste para 250 cm e aguarde cerca de 15 segundos após o último movimento simulado.
+
+### Reproduzir em um novo projeto
+
+Crie um projeto ESP32 com Arduino no Wokwi. Copie os arquivos
+`sketch.ino`, `diagram.json` e `modelo.h`, disponíveis na pasta
+`MakerLab` deste repositório, e adicione a biblioteca
+**LiquidCrystal I2C** pelo Library Manager.
 
 Não é necessário instalar Python para executar a simulação. A árvore já está exportada no arquivo `modelo.h`. O ZIP é um pacote de preparação; a entrega oficial é o repositório GitHub.
 
