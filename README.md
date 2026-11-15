@@ -112,8 +112,6 @@ Consulte [docs/TESTES.md](docs/TESTES.md). O treinamento e a inferência C++ for
 - Vídeo demonstrativo, até 6 minutos: **PENDENTE — inserir link acessível após gravar.**
 - Portal: https://reencontro-site.vercel.app/
 
-Roteiro sugerido: [docs/ROTEIRO_VIDEO.md](docs/ROTEIRO_VIDEO.md).
-
 Entregar o link do GitHub com todos estes arquivos, integrantes no README e link do vídeo. Não entregar somente o ZIP ou o portal. Não apresentar este pacote como entrega final antes de preencher os links e realizar os testes de simulação.
 
 ## Privacidade e limites
