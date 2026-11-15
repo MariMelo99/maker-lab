@@ -1,0 +1,294 @@
+{
+  "version": 1,
+  "author": "Equipe Reencontro",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": 150,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "dist",
+      "top": -90,
+      "left": -180,
+      "attrs": {
+        "distance": "250"
+      }
+    },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir",
+      "top": -90,
+      "left": 80,
+      "attrs": {
+        "delayTime": "5",
+        "inhibitTime": "1.2"
+      }
+    },
+    {
+      "type": "wokwi-lcd2004",
+      "id": "lcd",
+      "top": 110,
+      "left": 280,
+      "attrs": {
+        "pins": "i2c",
+        "background": "green",
+        "color": "black"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "fault",
+      "top": 380,
+      "left": 200,
+      "attrs": {
+        "color": "red",
+        "label": "INJETAR FALHA"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led0",
+      "top": 320,
+      "left": -180,
+      "attrs": {
+        "color": "blue"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r0",
+      "top": 320,
+      "left": -90,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 380,
+      "left": -180,
+      "attrs": {
+        "color": "green"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 380,
+      "left": -90,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 440,
+      "left": -180,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 440,
+      "left": -90,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "div1",
+      "top": 35,
+      "left": -160,
+      "attrs": {
+        "value": "1000"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "div2",
+      "top": 85,
+      "left": -160,
+      "attrs": {
+        "value": "2000"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "esp:VIN",
+      "dist:VCC",
+      "red",
+      []
+    ],
+    [
+      "esp:GND.1",
+      "dist:GND",
+      "black",
+      []
+    ],
+    [
+      "esp:D18",
+      "dist:TRIG",
+      "green",
+      []
+    ],
+    [
+      "dist:ECHO",
+      "div1:1",
+      "blue",
+      []
+    ],
+    [
+      "div1:2",
+      "esp:D19",
+      "blue",
+      []
+    ],
+    [
+      "div1:2",
+      "div2:1",
+      "blue",
+      []
+    ],
+    [
+      "div2:2",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp:VIN",
+      "pir:VCC",
+      "red",
+      []
+    ],
+    [
+      "esp:GND.1",
+      "pir:GND",
+      "black",
+      []
+    ],
+    [
+      "esp:D27",
+      "pir:OUT",
+      "orange",
+      []
+    ],
+    [
+      "esp:VIN",
+      "lcd:VCC",
+      "red",
+      []
+    ],
+    [
+      "esp:GND.1",
+      "lcd:GND",
+      "black",
+      []
+    ],
+    [
+      "esp:D21",
+      "lcd:SDA",
+      "green",
+      []
+    ],
+    [
+      "esp:D22",
+      "lcd:SCL",
+      "blue",
+      []
+    ],
+    [
+      "esp:D32",
+      "fault:1.l",
+      "purple",
+      []
+    ],
+    [
+      "esp:GND.1",
+      "fault:2.l",
+      "black",
+      []
+    ],
+    [
+      "esp:D25",
+      "r0:1",
+      "blue",
+      []
+    ],
+    [
+      "r0:2",
+      "led0:A",
+      "blue",
+      []
+    ],
+    [
+      "led0:C",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp:D26",
+      "r1:1",
+      "green",
+      []
+    ],
+    [
+      "r1:2",
+      "led1:A",
+      "green",
+      []
+    ],
+    [
+      "led1:C",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp:D14",
+      "r2:1",
+      "red",
+      []
+    ],
+    [
+      "r2:2",
+      "led2:A",
+      "red",
+      []
+    ],
+    [
+      "led2:C",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp:TX0",
+      "$serialMonitor:RX",
+      "",
+      []
+    ],
+    [
+      "esp:RX0",
+      "$serialMonitor:TX",
+      "",
+      []
+    ]
+  ],
+  "serialMonitor": {
+    "display": "always",
+    "newline": "lf"
+  }
+}

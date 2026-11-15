@@ -1,0 +1,13 @@
+|--- movimento <= 0.50
+|   |--- distancia <= 40.07
+|   |   |--- class: 3
+|   |--- distancia >  40.07
+|   |   |--- class: 0
+|--- movimento >  0.50
+|   |--- distancia <= 149.91
+|   |   |--- distancia <= 39.98
+|   |   |   |--- class: 3
+|   |   |--- distancia >  39.98
+|   |   |   |--- class: 2
+|   |--- distancia >  149.91
+|   |   |--- class: 1
